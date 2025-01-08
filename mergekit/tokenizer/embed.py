@@ -14,7 +14,7 @@
 # along with this program. If not, see http://www.gnu.org/licenses/.
 
 import logging
-from typing import Dict, Optional
+from typing import Dict, Optional, List
 
 import torch
 
@@ -122,7 +122,7 @@ class PermutedEmbeddings(Task[Dict[ModelReference, torch.Tensor]]):
     def assign_embedding_sources(
         self,
         permutations: Dict[ModelReference, Dict[int, int]],
-        models: list[ModelReference],
+        models: List[ModelReference],
         vocab: Dict[str, int],
         token_configs: Dict[str, TokenEmbeddingConfig],
     ):
